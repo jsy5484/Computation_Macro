@@ -1,1 +1,2 @@
-# jeong299UMN
+# Welcome to My Git Hub
+# This is 
