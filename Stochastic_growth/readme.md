@@ -6,10 +6,10 @@
    03/30/2020					                                 
 
 - VFI.m : a code for Value Function Iteration. 
-   (It has dependencies of tauchenHussey.m and bisection.m)
+   (It calls subroutine: tauchenHussey.m and bisection.m)
 
 - LQ_final.m : a code for Linear-Quadratic Method.
-   (It has a dependency of SS.m, Ricatti.m, h_find.m) 
+   (It calls subroutine: SS.m, Ricatti.m, and h_find.m) 
 
 - Vaughan.m : a code for Vaughan's Method.
-   (It has a dependency of SS.m) 
+   (It calls subroutine: SS.m) 
