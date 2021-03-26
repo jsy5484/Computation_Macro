@@ -2,18 +2,10 @@ clear all
 tic;
 
 % Parameterization
-theta = 0.35;
-delta = 0.0464;
-gamma_z = 0.016;
-gamma_n = 0.015;
-beta = 0.9722;
-beta_hat = beta*(1+gamma_n);
-sigma = 0.5;
-rho = 0.2;
-psi = 2.24;
+theta = 0.35; delta = 0.0464; gamma_z = 0.016; gamma_n = 0.015; beta = 0.9722;
+beta_hat = beta*(1+gamma_n); sigma = 0.5; rho = 0.2; psi = 2.24;
 grate = (1+gamma_z)*(1+gamma_n);
 param = [theta, delta, gamma_z, gamma_n, beta_hat, psi];
-
 
 % Find a Steady State
 SS = SS(param);
@@ -22,42 +14,21 @@ hss = SS(2);
 lss = 1 - hss;
 css = ((kss^param(1))*((exp(0)*hss)^(1-param(1)))) - (1+param(4))*(1+param(3))*kss + (1-param(2))*kss;
 
-
 syms k kp z h
 f = log(((k^param(1))*((exp(z)*h)^(1-param(1)))) - (1+param(4))*(1+param(3))*kp + (1-param(2))*k)+param(6)*log(1-h);
 
-r_bar = subs(f, [k, kp, z, h], [kss, kss, 0, hss]);
-r_bar = double(r_bar);
-z_bar = [kss, 0, 1, kss, hss];
-z_bar = z_bar';
+r_bar = subs(f, [k, kp, z, h], [kss, kss, 0, hss]); r_bar = double(r_bar);
+z_bar = [kss, 0, 1, kss, hss]; z_bar = z_bar';
 
-a = diff(f, k);
-b = diff(f, z);
-c = diff(f, kp);
-d = diff(f, h);
+a = diff(f, k); b = diff(f, z); c = diff(f, kp); d = diff(f, h);
 grad = [double(subs(a, [k, kp, z, h], [kss, kss, 0, hss])), double(subs(b, [k, kp, z, h], [kss, kss, 0, hss])), 0, double(subs(c, [k, kp, z, h], [kss, kss, 0, hss])), double(subs(d, [k, kp, z, h], [kss, kss, 0, hss]))];
 grad = grad';
 
 % Construct Hessian Matrix
-h11 = diff(a, k);
-h12 = diff(a, z);
-h13 = diff(a, kp);
-h14 = diff(a, h);
-
-h21 = diff(b, k);
-h22 = diff(b, z);
-h23 = diff(b, kp);
-h24 = diff(b, h);
-
-h31 = diff(c, k);
-h32 = diff(c, z);
-h33 = diff(c, kp);
-h34 = diff(c, h);
-
-h41 = diff(d, k);
-h42 = diff(d, z);
-h43 = diff(d, kp);
-h44 = diff(d, h);
+h11 = diff(a, k); h12 = diff(a, z); h13 = diff(a, kp); h14 = diff(a, h);
+h21 = diff(b, k); h22 = diff(b, z); h23 = diff(b, kp); h24 = diff(b, h);
+h31 = diff(c, k); h32 = diff(c, z); h33 = diff(c, kp); h34 = diff(c, h);
+h41 = diff(d, k); h42 = diff(d, z); h43 = diff(d, kp); h44 = diff(d, h);
 
 hess = [[double(subs(h11, [k, kp, z, h], [kss, kss, 0, hss])), double(subs(h12, [k, kp, z, h], [kss, kss, 0, hss])), 0, double(subs(h13, [k, kp, z, h], [kss, kss, 0, hss])), double(subs(h14, [k, kp, z, h], [kss, kss, 0, hss]))];
         [double(subs(h21, [k, kp, z, h], [kss, kss, 0, hss])), double(subs(h22, [k, kp, z, h], [kss, kss, 0, hss])), 0, double(subs(h23, [k, kp, z, h], [kss, kss, 0, hss])), double(subs(h24, [k, kp, z, h], [kss, kss, 0, hss]))];
