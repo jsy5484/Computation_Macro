@@ -50,7 +50,6 @@ a = 1;
 function c = norm_pdf(x,mu,s2)
     c = 1/sqrt(2*pi*s2) * exp(-(x-mu)^2/2/s2);
 
-
 function [x,w] = gaussnorm(n,mu,s2)
 % Find Gaussian nodes and weights for the normal distribution
 % n  = # nodes
