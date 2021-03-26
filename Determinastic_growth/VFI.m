@@ -46,19 +46,11 @@ while maxDiff > tol
    for i = 1:nkgrid
         k_pol(i) = k_grid(argmax(i));
    end
-   
-    % Apply MacQueen-Porteus Bound in every iteration
-   c_low = (beta/(1-beta))*min(V_new-V_old);
-   c_high = (beta/(1-beta))*max(V_new-V_old);
-   maxDiff = c_high-c_low;
-    
-   %maxDiff = norm(V_new-V_old);
+ 
+   maxDiff = norm(V_new-V_old);
    V_old = V_new;  
 end
 toc; 
-
-V_new = V_new + ((c_high+c_low)/2);
-
 
 figure(1)
 plot(k_grid, V_new, 'LineWidth',2, 'DisplayName','Value Function');
