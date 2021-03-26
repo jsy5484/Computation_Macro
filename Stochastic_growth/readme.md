@@ -1,14 +1,9 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%					  	                                           %
-%   Codes for solving a determinastic growth model       %
-%						                                             %
-%   Written by Seungyoon Jeong (jeong299@umn.edu)        %
-%					                                               %
-%   03/30/2020					                                 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-- .zip file includes Matlab code solving Three near-linear
-   Methods to solve simple stochastic growth model. 
+# Codes for solving a determinastic growth model   
+   
+   Written by Seungyoon Jeong (jeong299@umn.edu)        
+   
+   03/30/2020					                                 
 
 - VFI.m : a code for Value Function Iteration. 
    (It has dependencies of tauchenHussey.m and bisection.m)
