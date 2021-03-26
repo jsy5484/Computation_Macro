@@ -1,5 +1,5 @@
-%% Iterating Riccati Difference Equation
 
+%% Iterating Riccati Difference Equation
 function [P0, F0] = iter(P0, A_tld, B_tld, R, Q_tld, tol)
     iter = 0;
     A = R + B_tld.'*P0*B_tld;
