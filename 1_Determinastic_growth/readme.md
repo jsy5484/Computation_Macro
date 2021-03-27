@@ -1,4 +1,4 @@
-# Codes for solving a determinastic growth model.
+# Codes for solving a deterministic growth model.
 
 Written by Seungyoon Jeong (jeong299@umn.edu)
   
