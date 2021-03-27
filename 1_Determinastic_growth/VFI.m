@@ -67,5 +67,3 @@ xlim([min(k_grid) max(k_grid)])
 title('Optimal Capital Policy Function')
 xlabel('level of Capital Today')
 ylabel('level of Capital Tomorrow')
-
-
