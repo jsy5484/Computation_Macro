@@ -8,7 +8,7 @@
 - VFI.m : a code for Value Function Iteration. 
    (It calls subroutines: tauchenHussey.m and bisection.m)
 
-- LQ_final.m : a code for Linear-Quadratic Method.
+- Linear_Quadratic.m : a code for Linear-Quadratic Method.
    (It calls subroutines: SS.m, Ricatti.m, and h_find.m) 
 
 - Vaughan.m : a code for Vaughan's Method.
