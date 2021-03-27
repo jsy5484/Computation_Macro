@@ -1,7 +1,8 @@
 # Codes for solving a determinastic growth model.
 
-  Written by Seungyoon Jeong (jeong299@umn.edu)
-  03/17/2021					          
+Written by Seungyoon Jeong (jeong299@umn.edu)
+  
+03/17/2021					          
   
 - VFI.m : a code for Value Function Iteration. 
 
