@@ -1,5 +1,5 @@
 
-#qfqf
+# Replicating a research by Chari, Kehoe, and McGrattan, "Business Cycle Accounting (2007)"
 
   Written by Seungyoon Jeong (jeong299@umn.edu)      
   				               
