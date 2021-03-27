@@ -73,7 +73,6 @@ while maxDiff > tol
         break;
     end
 end
-
 % Take the median at the end
 V_nxt = V_nxt + ((c_high+c_low)/2);
 toc; 
