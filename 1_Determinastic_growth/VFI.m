@@ -69,4 +69,3 @@ xlabel('level of Capital Today')
 ylabel('level of Capital Tomorrow')
 
 
-
