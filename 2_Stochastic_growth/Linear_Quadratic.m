@@ -22,10 +22,7 @@ r_bar = double(r_bar);
 z_bar = [kss, 0, 1, kss, hss];
 z_bar = z_bar';
 
-a = diff(f, k);
-b = diff(f, z);
-c = diff(f, kp);
-d = diff(f, h);
+a = diff(f, k); b = diff(f, z); c = diff(f, kp); d = diff(f, h);
 grad = [double(subs(a, [k, kp, z, h], [kss, kss, 0, hss])), double(subs(b, [k, kp, z, h], [kss, kss, 0, hss])), 0, double(subs(c, [k, kp, z, h], [kss, kss, 0, hss])), double(subs(d, [k, kp, z, h], [kss, kss, 0, hss]))];
 grad = grad';
 
@@ -150,4 +147,3 @@ hold off
 saveas(figure(2),'LQ_B_hrs.jpg');
 
 toc;
-
