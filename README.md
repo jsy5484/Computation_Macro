@@ -1,6 +1,6 @@
 # Repository for Programs to solve macroeconomic problems
 
-1. Deterministic Growth Model
+## 1. Deterministic Growth Model
   - Value Function Iteration
   - Policy Function Iteration
   - Howard's Algorithm and MacQueen-Porteus Bounds
