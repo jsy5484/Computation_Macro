@@ -4,11 +4,13 @@
   - Value Function Iteration
   - Policy Function Iteration
   - Howard's Algorithm and MacQueen-Porteus Bounds
-
+  
 ## 2. Stochastic Growth Model
   - Value Function Iteration
   - Linear-Quadratic Method
   - Acceleration with Vaughan's Algorithm
+  - Value Function Iteration with Interpolation
+  - Policy Function Iteration with Interpolation
 
 ## 3. Tax-Distorted Growth Model
   - Linear-Quadratic Method
