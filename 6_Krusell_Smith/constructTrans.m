@@ -1,6 +1,5 @@
 function transition = constructTrans(dur_ug, dur_ub, dur_gd, dur_bd, unemp_gd, unemp_bd)
 % Construct a transition probability from information of aggregate economy 
-
     % For aggregate Shock
     p_gg = (dur_gd-1)/dur_gd;
     p_gb = 1 - (dur_bd-1)/dur_bd;
@@ -50,5 +49,5 @@ function transition = constructTrans(dur_ug, dur_ub, dur_gd, dur_bd, unemp_gd, u
                  [Pr_12, Pr_22, Pr_32, Pr_42];
                  [Pr_13, Pr_23, Pr_33, Pr_43];
                  [Pr_14, Pr_24, Pr_34, Pr_44]];
-
+                 
 end
