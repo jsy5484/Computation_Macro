@@ -139,6 +139,5 @@ function [agg_shock, idy_shock] = shock_simul(trans, NH, horiz, unemp_b)
        end
     
     end
-
 end
 
