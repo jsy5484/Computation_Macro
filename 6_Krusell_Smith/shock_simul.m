@@ -9,7 +9,6 @@ function [agg_shock, idy_shock] = shock_simul(trans, NH, horiz, unemp_b)
     prob_agg(2,2) = trans(3,3) + trans(3,4); 
     prob_agg(1,2) = 1 - prob_agg(2,2);
 
-    
     pr_bb_uu = trans(1,1)/prob_agg(1,1); 
     pr_bb_ue = 1 - pr_bb_uu;
     
