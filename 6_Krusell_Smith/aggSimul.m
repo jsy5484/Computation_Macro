@@ -3,7 +3,6 @@ function [KM_time, KM_cross]  = aggSimul(horiz, idio_shock, agg_shock, KM_max, K
 % record first-moments and distribution every periods.
 
 KM_time = zeros(horiz,1); a2 = [1; 2]; epsilon2 = [1; 2];
-
     for t = 1:horiz
        KM_time(t) = mean(KM_cross); 
        KM_time(t) = KM_time(t)*(KM_time(t)>=KM_min)*(KM_time(t)<=KM_max)+ ...
