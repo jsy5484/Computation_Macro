@@ -54,7 +54,6 @@ KM_cross = zeros(1, N) + kss;
 %% STEP 3. Main Loop
 iter = 0; diff = 100; tol = 1e-8; B1 = [0, 0, 0, 0];
 
-
 while diff > tol
     iter = iter + 1;
     fprintf('Current Iteration is : %d \n', iter);
