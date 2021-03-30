@@ -26,3 +26,9 @@
   - Krusell-Smith Algorithm
 
   - Reiter's Method
+
+
+## Replications
+  - Business Cycle Accounting by Chari, Kehoe, and McGrattan
+  - Hank
+
