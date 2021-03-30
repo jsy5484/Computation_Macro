@@ -1,6 +1,7 @@
-# Solve 
+# Solving a model economcy by Krusell-Smith, "Income and Wealth Heterogeneity in the Macroeconomy (1998)"
 
 Written by Seungyoon Jeong (jeong299@umn.edu)
+
 08/01/2020	
 
 
