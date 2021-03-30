@@ -22,5 +22,4 @@ KM_time = zeros(horiz,1); a2 = [1; 2]; epsilon2 = [1; 2];
        KM_cross = KM_cross_new;
 
     end            
-   
 end
