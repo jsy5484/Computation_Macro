@@ -37,7 +37,7 @@ hss = (1/kl_rto)*kss;
 xss = grate*kss - (1-delta)*kss;
 yss = (kss^theta)*((z_ss*hss)^(1-theta));
 
-% Construct policy function. Import key ingredient from previous HW 2.
+% Construct policy function. Import key ingredient from previous Vaughan's Method
 A = readmatrix('A.txt');
 B = importdata('B.txt');
 C = importdata('C.txt');
