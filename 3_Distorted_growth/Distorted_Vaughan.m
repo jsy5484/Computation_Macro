@@ -14,10 +14,7 @@ P =[[ 0.9887,  0.0307, -0.0089,  -0.0407];
 P0 = [0.014; 0.0008; 0.0129; -0.0137];
 
 S_bar = inv(eye(4)-P)*P0;
-z_ss = exp(S_bar(1));
-tl_ss = exp(S_bar(2));
-tx_ss = exp(S_bar(3));
-g_ss = exp(S_bar(4));
+z_ss = exp(S_bar(1)); tl_ss = exp(S_bar(2)); tx_ss = exp(S_bar(3)); g_ss = exp(S_bar(4));
 
 param = [theta, delta, gamma_z, gamma_n, beta_hat, psi];
 grate = (1+param(3))*(1+param(4));
@@ -36,8 +33,8 @@ hss = (1/kl_rto)*kss;
 xss = grate*kss - (1-delta)*kss;
 
 
-tl_ss = S_bar(2);
-tx_ss = S_bar(3);
+tl_ss = S_bar(2); tx_ss = S_bar(3);
+
 %% STEP 2. % Log-linearize the Intratemporal equation
 syms h z tl g kp k 
 c = (k^theta)*((z*h)^(1-theta)) - grate*kp + (1-delta)*k - g;
@@ -72,11 +69,8 @@ cp = (kp^theta)*((zp*hp)^(1-theta)) - grate*kpp + (1-delta)*kp - gp;
 rp = theta*(kp^(theta-1))*((zp*hp)^(1-theta));
 
 l_Eul = -beta_hat*c*(rp + (1-delta)*(1+exp(txp))) + cp*(1+exp(tx))*grate;
-
-
 grad_Eul = gradient(l_Eul, [k, kp, kpp, h, hp, z, tx, g, zp, txp, gp]);
 Ex = double(subs(grad_Eul, [k, kp, kpp, h, hp, z, tx, g, zp, txp, gp], [kss, kss, kss, hss, hss, z_ss, tx_ss, g_ss, z_ss, tx_ss, g_ss]));
-
 
 % 11 arguments
 coeff_Eul = [Ex(1)*kss;
@@ -105,9 +99,7 @@ b11 = coeff_Eul(11);
 
 clear k kp kpp h hp z tx g zp txp gp
 
-
 %% Solve the Generalized Eigenvalue Problem.
-
 A1 = [[1, 0, 0];
       [0, 0, 0];
       [0, b3, b5]];
