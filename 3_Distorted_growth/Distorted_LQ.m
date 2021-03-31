@@ -41,7 +41,7 @@ tx_ss = S_bar(3);
 g_ss = S_bar(4);
 
 syms k z tl tx g AK AH AX kp h 
-% Return function
+% Express Return function
 r = theta*(AK^(theta-1))*((exp(z)*AH)^(1-theta));
 w = (1-theta)*(AK^theta)*((exp(z)*AH)^(-theta))*exp(z);
 
@@ -84,6 +84,7 @@ grad = [double(subs(a, var1, ss_pt)),...
         double(subs(j_, var1, ss_pt))];
 grad = grad';
 
+% This is a very inefficient way to get Hessian, but I wanted to check the matrix visually, because of the location of 1 matters
 % Construct Hessian Matrix
 h_a1 = diff(a, k); h_a2 = diff(a, z); h_a3 = diff(a, tl); h_a4 = diff(a, tx);
 h_a5 = diff(a, g); h_a6 = diff(a, AK); h_a7 = diff(a, AX); h_a8 = diff(a, AH);
