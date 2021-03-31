@@ -2,6 +2,8 @@ clear all
 clc
 tic;
 
+% Solving tax-distorted economy with LQ confusing. 
+
 % Parameterization
 theta = 0.35; delta = 0.0464; gamma_z = 0.016; gamma_n = 0.015;
 beta = 0.9722; beta_hat = beta*(1+gamma_n); psi = 2.24;
@@ -84,7 +86,8 @@ grad = [double(subs(a, var1, ss_pt)),...
         double(subs(j_, var1, ss_pt))];
 grad = grad';
 
-% This is a very inefficient way to get Hessian, but I wanted to check the matrix visually, because of the location of 1 matters
+% This is a very inefficient way to get Hessian, but I wanted to check the matrix visually, because of the location of 1 matters.
+% For the rest of code, even though it's a bit time-consuming, I made everything visually.
 % Construct Hessian Matrix
 h_a1 = diff(a, k); h_a2 = diff(a, z); h_a3 = diff(a, tl); h_a4 = diff(a, tx);
 h_a5 = diff(a, g); h_a6 = diff(a, AK); h_a7 = diff(a, AX); h_a8 = diff(a, AH);
