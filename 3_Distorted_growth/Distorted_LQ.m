@@ -86,48 +86,20 @@ grad = [double(subs(a, var1, ss_pt)),...
         double(subs(j_, var1, ss_pt))];
 grad = grad';
 
-% This is a very inefficient way to get Hessian, but I wanted to check the matrix visually, because of the location of 1 matters.
+% Followings are a very inefficient way of coding to get Hessian and the rest, but I wanted to check the matrix visually, because of the location of 1 matters.
 % For the rest of code, even though it's a bit time-consuming, I made everything visually.
+
 % Construct Hessian Matrix
-h_a1 = diff(a, k); h_a2 = diff(a, z); h_a3 = diff(a, tl); h_a4 = diff(a, tx);
-h_a5 = diff(a, g); h_a6 = diff(a, AK); h_a7 = diff(a, AX); h_a8 = diff(a, AH);
-h_a9 = diff(a, kp); h_a10 = diff(a, h);
-
-h_b1 = diff(b, k); h_b2 = diff(b, z); h_b3 = diff(b, tl); h_b4 = diff(b, tx);
-h_b5 = diff(b, g); h_b6 = diff(b, AK); h_b7 = diff(b, AX); h_b8 = diff(b, AH);
-h_b9 = diff(b, kp); h_b10 = diff(b, h);
-
-h_c1 = diff(c, k); h_c2 = diff(c, z); h_c3 = diff(c, tl); h_c4 = diff(c, tx);
-h_c5 = diff(c, g); h_c6 = diff(c, AK); h_c7 = diff(c, AX); h_c8 = diff(c, AH);
-h_c9 = diff(c, kp); h_c10 = diff(c, h);
-
-h_d1 = diff(d, k); h_d2 = diff(d, z); h_d3 = diff(d, tl); h_d4 = diff(d, tx);
-h_d5 = diff(d, g); h_d6 = diff(d, AK); h_d7 = diff(d, AX); h_d8 = diff(d, AH);
-h_d9 = diff(d, kp); h_d10 = diff(d, h);
-
-h_e1 = diff(e, k); h_e2 = diff(e, z); h_e3 = diff(e, tl); h_e4 = diff(e, tx);
-h_e5 = diff(e, g); h_e6 = diff(e, AK); h_e7 = diff(e, AX); h_e8 = diff(e, AH);
-h_e9 = diff(e, kp); h_e10 = diff(e, h);
-
-h_f1 = diff(f_, k); h_f2 = diff(f_, z); h_f3 = diff(f_, tl); h_f4 = diff(f_, tx);
-h_f5 = diff(f_, g); h_f6 = diff(f_, AK); h_f7 = diff(f_, AX); h_f8 = diff(f_, AH);
-h_f9 = diff(f_, kp); h_f10 = diff(f_, h);
-
-h_g1 = diff(g_, k); h_g2 = diff(g_, z); h_g3 = diff(g_, tl); h_g4 = diff(g_, tx);
-h_g5 = diff(g_, g); h_g6 = diff(g_, AK); h_g7 = diff(g_, AX); h_g8 = diff(g_, AH);
-h_g9 = diff(g_, kp); h_g10 = diff(g_, h);
-
-h_h1 = diff(h_, k); h_h2 = diff(h_, z); h_h3 = diff(h_, tl); h_h4 = diff(h_, tx);
-h_h5 = diff(h_, g); h_h6 = diff(h_, AK); h_h7 = diff(h_, AX); h_h8 = diff(h_, AH);
-h_h9 = diff(h_, kp); h_h10 = diff(h_, h);
-
-h_i1 = diff(i_, k); h_i2 = diff(i_, z); h_i3 = diff(i_, tl); h_i4 = diff(i_, tx);
-h_i5 = diff(i_, g); h_i6 = diff(i_, AK); h_i7 = diff(i_, AX); h_i8 = diff(i_, AH);
-h_i9 = diff(i_, kp); h_i10 = diff(i_, h);
-
-h_j1 = diff(j_, k); h_j2 = diff(j_, z); h_j3 = diff(j_, tl); h_j4 = diff(j_, tx);
-h_j5 = diff(j_, g); h_j6 = diff(j_, AK); h_j7 = diff(j_, AX); h_j8 = diff(j_, AH);
-h_j9 = diff(j_, kp); h_j10 = diff(j_, h);
+h_a1 = diff(a, k); h_a2 = diff(a, z); h_a3 = diff(a, tl); h_a4 = diff(a, tx); h_a5 = diff(a, g); h_a6 = diff(a, AK); h_a7 = diff(a, AX); h_a8 = diff(a, AH); h_a9 = diff(a, kp); h_a10 = diff(a, h);
+h_b1 = diff(b, k); h_b2 = diff(b, z); h_b3 = diff(b, tl); h_b4 = diff(b, tx); h_b5 = diff(b, g); h_b6 = diff(b, AK); h_b7 = diff(b, AX); h_b8 = diff(b, AH); h_b9 = diff(b, kp); h_b10 = diff(b, h);
+h_c1 = diff(c, k); h_c2 = diff(c, z); h_c3 = diff(c, tl); h_c4 = diff(c, tx); h_c5 = diff(c, g); h_c6 = diff(c, AK); h_c7 = diff(c, AX); h_c8 = diff(c, AH); h_c9 = diff(c, kp); h_c10 = diff(c, h);
+h_d1 = diff(d, k); h_d2 = diff(d, z); h_d3 = diff(d, tl); h_d4 = diff(d, tx); h_d5 = diff(d, g); h_d6 = diff(d, AK); h_d7 = diff(d, AX); h_d8 = diff(d, AH); h_d9 = diff(d, kp); h_d10 = diff(d, h);
+h_e1 = diff(e, k); h_e2 = diff(e, z); h_e3 = diff(e, tl); h_e4 = diff(e, tx); h_e5 = diff(e, g); h_e6 = diff(e, AK); h_e7 = diff(e, AX); h_e8 = diff(e, AH); h_e9 = diff(e, kp); h_e10 = diff(e, h);
+h_f1 = diff(f_, k); h_f2 = diff(f_, z); h_f3 = diff(f_, tl); h_f4 = diff(f_, tx); h_f5 = diff(f_, g); h_f6 = diff(f_, AK); h_f7 = diff(f_, AX); h_f8 = diff(f_, AH); h_f9 = diff(f_, kp); h_f10 = diff(f_, h);
+h_g1 = diff(g_, k); h_g2 = diff(g_, z); h_g3 = diff(g_, tl); h_g4 = diff(g_, tx); h_g5 = diff(g_, g); h_g6 = diff(g_, AK); h_g7 = diff(g_, AX); h_g8 = diff(g_, AH); h_g9 = diff(g_, kp); h_g10 = diff(g_, h);
+h_h1 = diff(h_, k); h_h2 = diff(h_, z); h_h3 = diff(h_, tl); h_h4 = diff(h_, tx); h_h5 = diff(h_, g); h_h6 = diff(h_, AK); h_h7 = diff(h_, AX); h_h8 = diff(h_, AH); h_h9 = diff(h_, kp); h_h10 = diff(h_, h);
+h_i1 = diff(i_, k); h_i2 = diff(i_, z); h_i3 = diff(i_, tl); h_i4 = diff(i_, tx); h_i5 = diff(i_, g); h_i6 = diff(i_, AK); h_i7 = diff(i_, AX); h_i8 = diff(i_, AH); h_i9 = diff(i_, kp); h_i10 = diff(i_, h);
+h_j1 = diff(j_, k); h_j2 = diff(j_, z); h_j3 = diff(j_, tl); h_j4 = diff(j_, tx); h_j5 = diff(j_, g); h_j6 = diff(j_, AK); h_j7 = diff(j_, AX); h_j8 = diff(j_, AH); h_j9 = diff(j_, kp); h_j10 = diff(j_, h);
 
 hess = [[double(subs(h_a1, var1, ss_pt)),   0, double(subs(h_a2, var1, ss_pt)), double(subs(h_a3, var1, ss_pt)), double(subs(h_a4, var1, ss_pt)), double(subs(h_a5, var1, ss_pt)), double(subs(h_a6, var1, ss_pt)), double(subs(h_a7, var1, ss_pt)), double(subs(h_a8, var1, ss_pt)), double(subs(h_a9, var1, ss_pt)), double(subs(h_a10, var1, ss_pt))];
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
