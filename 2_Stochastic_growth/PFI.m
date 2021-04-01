@@ -38,6 +38,12 @@ for i = 1:Params.ngrid_k
 end
 
 Params.V_old = zeros(Params.ngrid_k, Params.ngrid_z);
+for i = 1:Params.ngrid_k
+    for j =1:Params.ngrid_z
+        k_pol(i,j) = Params.k_grid(i);
+    end
+end
+
 % Fill an initial guess
 for i = 1:Params.ngrid_k
     for j = 1:Params.ngrid_z
@@ -52,12 +58,26 @@ Params.V_new = zeros(Params.ngrid_k, Params.ngrid_z);
 dr = zeros(Params.ngrid_k, Params.ngrid_z);
 expectedVal = zeros(Params.ngrid_k, Params.ngrid_z);
 
-maxDiff = 10.0; tol = 1.0e-10; iter = 0;
+maxDiff = 10.0; tol = 1.0e-10; iter = 0; m = 20;
 while maxDiff > tol
     iter = iter + 1;
     fprintf('Current Iteration is: %.d \n', iter);
     fprintf('Current Iteration is: %.8f \n', maxDiff);
-
+    
+ 
+    for k = 1:m
+        for i = 1:Params.ngrid_k
+            for j = 1:Params.ngrid_z
+                V_interp = interp1(Params.k_grid, Params.V_old, k_pol(i,j), 'linear');
+                c = Params.z_grid(j)*Params.k_grid(i)^Params.theta ...
+                        + (1 - Params.delta)*Params.k_grid(i) - k_pol(i,j); 
+                Params.V_new(i,j) = ((c^(1-Params.alpha))/(1 - Params.alpha)) + Params.beta*V_interp*Params.trans(:,j);
+            end
+            %V_new(i) = log(A*(k_grid(i)^alpha) + (1 - delta)*k_grid(i) - kp_pol(i)) + beta*V_old(dr(i));
+        end
+        Params.V_old = Params.V_new;
+    end
+    
     for j = 1:Params.ngrid_z
         for i = 1:Params.ngrid_k   
             Params.k_now = Params.k_grid(i);
