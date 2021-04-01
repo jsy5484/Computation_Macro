@@ -30,5 +30,6 @@
 
 ## Replications
   - Business Cycle Accounting by Chari, Kehoe, and McGrattan
+  - Default Risk and Income fluctuations by Arellano
   - Heterogeneoue Agent New Keynesian Model
 
