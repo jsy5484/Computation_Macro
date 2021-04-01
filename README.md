@@ -17,7 +17,7 @@
   - Acceleration with Vaughan's Algorithm
 
 ## 4. DSGE modeling - a Real Business Cycle model
-  - Log-linearization and Kalman Filtering
+  - Use the Kalman Filtering and solve a RBC model
 
 ## 5. General Equilibrium Model without an Aggregate Shock
   - Aiyagari Model 
