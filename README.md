@@ -30,5 +30,5 @@
 
 ## Replications
   - Business Cycle Accounting by Chari, Kehoe, and McGrattan
-  - Hank
+  - Heterogeneoue Agent New Keynesian Model
 
