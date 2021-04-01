@@ -34,7 +34,7 @@ function [transP, dscSp] = rouwTrans(rho, ave, dev, num)
 %       simply do:      rho_m = rho_q^(1/4)    and sigma_m = sigma_q/4
 %       where the latter equality follows since conditional shocks are IID by definition
 % 
-% © Lu Zhang, Inc. 2001
+% Â© Lu Zhang, Inc. 2001
 
 % Quality Control
 if mod(num, 2) == 0,
