@@ -13,3 +13,9 @@
 
 - Vaughan.m : a code for Vaughan's Method.
    (It calls a subroutine: SS.m) 
+
+- VFI_interp.m : a code for Value Function Iteration with interpolation
+
+- PFI.m : a code for Policy Function Iteration with interpolation
+
+- PFI_MP.m : a code for Howard's Algorithm with interpolation 
