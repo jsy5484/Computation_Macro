@@ -1,5 +1,7 @@
 # Repository for Programs to solve macroeconomic problems
 
+Most of codes are written in Matlab, and some of them are in Fortran.
+
 ## 1. Deterministic Growth Model
   - Value Function Iteration
   - Policy Function Iteration
