@@ -12,7 +12,8 @@ Most of codes are written in *Matlab*, and some of them are written in *Fortran*
   - Linear-Quadratic Method
   - Acceleration with Vaughan's Algorithm
   - Value Function Iteration with Interpolation
-  - Policy Function Iteration with Interpolation
+  - Policy Function Iteration with Interpolation 
+  - Endogenous Grid Method (EGM)
 
 ## 3. Tax-Distorted Growth Model
   - Linear-Quadratic Method
