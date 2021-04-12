@@ -32,7 +32,6 @@ for i = 1:Params.ngrid_k
            else
                 rtrn(i,j,w) = (pre_cnsm^(1-Params.alpha))/(1-Params.alpha);
            end
-       
         end
     end
 end
@@ -44,12 +43,10 @@ for i = 1:Params.ngrid_k
         consm = (Params.z_grid(j)*(Params.k_grid(i)^Params.theta) - Params.delta*Params.k_grid(i));
         util = (consm^(1-Params.alpha))/(1-Params.alpha);
         Params.V_old(i, j) = util/(1-Params.beta);
-        %V_old(i, j) = log(z_grid(j)*(k_grid(i)^theta) - delta*k_grid(i))/(1-beta);
     end
 end
 
 Params.V_new = zeros(Params.ngrid_k, Params.ngrid_z);
-dr = zeros(Params.ngrid_k, Params.ngrid_z);
 expectedVal = zeros(Params.ngrid_k, Params.ngrid_z);
 
 maxDiff = 10.0; tol = 1.0e-10; iter = 0;
